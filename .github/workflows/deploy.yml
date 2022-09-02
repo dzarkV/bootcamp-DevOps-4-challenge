@@ -1,17 +1,36 @@
-name: Deploy_to_Deta
+# name: Deploy_to_Deta
+# on:
+#   workflow_run:
+#     workflows: ["pipeline-dockerhub"]
+#     types:
+#       - completed
+
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2 
+#       - uses: BogDAAAMN/deta-deploy-action@v1.0.1
+#         with:
+#           deta-access-token: ${{ secrets.DETA_ACCESS_TOKEN }} 
+#           deta-name: 'micro-bootcamp-devops' 
+#           deta-project: 'bootcamp-project' Deta only have node:14x runtime. Some packages not supported
+
+name: Deploy_to_Heroku 
 on:
   workflow_run:
     workflows: ["pipeline-dockerhub"]
     types:
       - completed
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2 
-      - uses: BogDAAAMN/deta-deploy-action@v1.0.1
-        with:
-          deta-access-token: ${{ secrets.DETA_ACCESS_TOKEN }} 
-          deta-name: 'micro-bootcamp-devops' 
-          deta-project: 'bootcamp-project' 
+jobs: 
+   deploy-heroku:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - uses: akhileshns/heroku-deploy@v3.12.12 
+          with:
+            heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+            heroku_app_name: "bootcamp-challenge4" 
+            heroku_email: ${{secrets.HEROKU_EMAIL}}
+            usedocker: true
