@@ -29,9 +29,7 @@ Automatiza el proceso de creación de la imagen de Docker y su subida a Docker H
 
 Se debe crear una aplicación en Heroku y desplegarla allí usando github actions. 
 
-Se cambió la plataforma de despliegue por Deta.sh
-
-- [x] [Hecho](/.github/workflows/deploy.yml)
+- [x] [Hecho](/.github/workflows/deploy.yml) con el despliegue [aqui](https://bootcamp-devops-challenge4.herokuapp.com/).
 
 ### Resultado:
 
