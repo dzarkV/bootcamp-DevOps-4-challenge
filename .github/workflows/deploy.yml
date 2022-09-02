@@ -1,4 +1,4 @@
-name: Deploy to Deta
+name: Deploy_to_Deta
 on:
   workflow_run:
     workflows: ["pipeline-dockerhub"]
