@@ -3,10 +3,10 @@
   "private": true,
   "version": "0.0.1",
   "description": "NodeJS example",
-  "author": "RoxsRoss",
+  "author": "dzark",
   "scripts": {
-    "start": "node index.js",
-    "test": "mocha index.test.js"
+    "start": "node index.js"
+    
   },
   "dependencies": {
     "express": "*"
