@@ -31,7 +31,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${{env.IMAGE_NAME}}:$(date +%s)
+      run: docker build . --file Dockerfile --tag ${{env.IMAGE_NAME}}:$(date +%F%T)
 
   docker_registry:
     needs: docker_build
